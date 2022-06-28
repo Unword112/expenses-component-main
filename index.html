@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Expenses chart component</title>
+  <link rel="stylesheet" href="styles.css">
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
+  </script>
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+</head>
+<body>
+  <div class="card">
+    <div class="top-card">
+      <div class="text-balance"><h4>My balance</h4><h1>$921.48</h1></div>
+      <img class="logo" src="images/logo.svg"/>
+    </div>
+    <div class="bottom-card">
+      <div class="text-bt-card">
+        <h1><b>Spending - Last 7 days</b></h1>
+      <div class="charts">
+        <canvas id="myChart" style="width:100%;max-width:700px"></canvas>
+        <script>
+          var xValues = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"];
+          var yValues = [17.45, 34.91, 52.36, 31.07, 23.39, 43.28, 25.48];
+          var barColors = 'hsl(10, 79%, 65%)';
+          var holdbarColors = 'hsl(186, 34%, 60%)';
+
+          new Chart("myChart", {
+            type: "bar",
+            data: {
+              labels: xValues,
+              datasets: [{
+                data: yValues,
+                dataLabels: false,
+                backgroundColor: barColors,
+                hoverBackgroundColor: holdbarColors,
+              }],
+              
+            },
+            options: {
+              legend: {display: false},
+              scales: {
+              xAxes: [{
+                  gridLines: {
+                      color: "rgba(0, 0, 0, 0)",
+                      display: false,
+                      barPercentage: 1,
+                      categoryPercentage: 0.3,
+                  },
+                 
+              }],
+              yAxes: [
+                {
+                  id: 'y-axis-density',
+                  display: false
+                },
+                {
+                  id: 'y-axis-gravity',
+                  display: false
+                },
+              ] 
+              }
+            }
+          });
+        </script>
+      </div>
+      <div class="text-p">
+        <div class="left-side">
+          <h6>Total this month</h6>
+          $478.33
+        </div>
+        <div class="right-side">
+          +2.4%
+          <h6>from last month</h6>
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
