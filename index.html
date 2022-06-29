@@ -8,9 +8,8 @@
   
   <title>Frontend Mentor | Expenses chart component</title>
   <link rel="stylesheet" href="styles.css">
-  <script
-    src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
-  </script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
 </head>
 <body>
@@ -23,52 +22,9 @@
       <div class="text-bt-card">
         <h1><b>Spending - Last 7 days</b></h1>
       <div class="charts">
-        <canvas id="myChart" style="width:100%;max-width:700px"></canvas>
-        <script>
-          var xValues = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"];
-          var yValues = [17.45, 34.91, 52.36, 31.07, 23.39, 43.28, 25.48];
-          var barColors = 'hsl(10, 79%, 65%)';
-          var holdbarColors = 'hsl(186, 34%, 60%)';
-
-          new Chart("myChart", {
-            type: "bar",
-            data: {
-              labels: xValues,
-              datasets: [{
-                data: yValues,
-                dataLabels: false,
-                backgroundColor: barColors,
-                hoverBackgroundColor: holdbarColors,
-              }],
-              
-            },
-            options: {
-              legend: {display: false},
-              scales: {
-              xAxes: [{
-                  gridLines: {
-                      color: "rgba(0, 0, 0, 0)",
-                      display: false,
-                      barPercentage: 1,
-                      categoryPercentage: 0.3,
-                  },
-                 
-              }],
-              yAxes: [
-                {
-                  id: 'y-axis-density',
-                  display: false
-                },
-                {
-                  id: 'y-axis-gravity',
-                  display: false
-                },
-              ] 
-              }
-            }
-          });
-        </script>
+        <canvas id="myChart"></canvas>
       </div>
+      <hr class="line">
       <div class="text-p">
         <div class="left-side">
           <h6>Total this month</h6>
@@ -82,5 +38,6 @@
       </div>
     </div>
   </div>
+  <script src="script.js" ></script>
 </body>
 </html>
