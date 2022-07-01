@@ -94,7 +94,7 @@ body {
     transform: translate(-50%, -10%);
 }
 hr.line {
-    
+    color: var(--Medium-brown);
 }
 
 .text-p {
