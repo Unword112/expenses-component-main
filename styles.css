@@ -102,3 +102,7 @@ hr.line {
     padding-top: 10%;
 }
 
+.right-side {
+    flex-direction: right;
+}
+
