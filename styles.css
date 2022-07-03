@@ -95,6 +95,7 @@ body {
 }
 hr.line {
     color: var(--Medium-brown);
+    width: 100px;
 }
 
 .text-p {
