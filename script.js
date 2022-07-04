@@ -38,7 +38,9 @@ new Chart("myChart", {
             display: false,
             drawBorder: false,
           },
-            
+          ticks: {
+            display: false,
+          },      
         }         
       }
     }
